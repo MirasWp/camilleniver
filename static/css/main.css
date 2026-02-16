@@ -1,0 +1,32 @@
+body{
+margin:0;
+background:#ffd6e8;
+text-align:center;
+overflow:hidden;
+font-family:sans-serif;
+}
+
+.slideshow img{
+width:80%;
+border-radius:15px;
+display:none;
+}
+
+button{
+padding:15px;
+border:none;
+border-radius:20px;
+background:pink;
+font-size:20px;
+}
+
+.heart{
+position:absolute;
+color:red;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+from{top:-10px;}
+to{top:100vh;}
+}
