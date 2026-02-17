@@ -1,4 +1,4 @@
-const text="Feliz aniversário meu amor 💖";
+const text="Feliz aniversário Meu Bem 💖";
 let i=0;
 setInterval(()=>{
 typing.innerHTML+=text[i++]||"";

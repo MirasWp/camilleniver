@@ -1,32 +1,60 @@
 body{
-margin:0;
-background:#ffd6e8;
-text-align:center;
-overflow:hidden;
-font-family:sans-serif;
+    margin:0;
+    background:#ffd6e8;
+    text-align:center;
+    overflow:hidden;
+    font-family:sans-serif;
 }
 
+/* slideshow container */
+.slideshow{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    margin-top:20px;
+}
+
+/* imagens */
 .slideshow img{
-width:80%;
-border-radius:15px;
-display:none;
+    width:80%;
+    max-width:300px;
+    margin:auto;
+    display:none;
+    border-radius:18px;
+    box-shadow:0 6px 20px rgba(0,0,0,.15);
 }
 
+/* botão */
 button{
-padding:15px;
-border:none;
-border-radius:20px;
-background:pink;
-font-size:20px;
+    padding:15px;
+    border:none;
+    border-radius:20px;
+    background:pink;
+    font-size:20px;
 }
 
+/* corações */
 .heart{
-position:absolute;
-color:red;
-animation:fall 5s linear infinite;
+    position:absolute;
+    color:red;
+    animation:fall 5s linear infinite;
 }
 
+/* animação corações */
 @keyframes fall{
-from{top:-10px;}
-to{top:100vh;}
+    from{top:-10px;}
+    to{top:100vh;}
+}
+
+/* mobile extra */
+@media(max-width:480px){
+    .slideshow img{
+        max-width:170px;
+    }
+
+    button{
+        font-size:16px;
+        padding:12px 20px;
+    }
 }

@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe4ef 0%, #ffb3c1 50%, #ff7fa8 100%);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    color: #ff4d6a;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Coração gigante */
+.big-heart {
+    position: relative;
+    width: 330px; /* Largura do coração */
+    height: 300px; /* Altura do coração */
+    background: #ff4d6a; /* Cor vermelha */
+    transform: rotate(-45deg); /* Rotação para formar o coração */
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite; /* Animação de pulsar */
+}
+
+.big-heart::before,
+.big-heart::after {
+    content: '';
+    position: absolute;
+    width: 330px;
+    height: 300px;
+    background: #ff4d6a;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.big-heart::before {
+    top: -150px; /* Posição para a metade superior esquerda */
+    left: 0;
+}
+
+.big-heart::after {
+    top: 0; /* Posição para a metade superior direita */
+    left: 150px;
+}
+
+.big-heart span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg); /* Centraliza e corrige rotação */
+    color: white;
+    font-size: 1.5em; /* Tamanho do texto */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.1); }
+}
+
+/* Corações caindo em fundo */
+.hearts-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart-bg {
+    position: absolute;
+    color: #ff4d6a;
+    font-size: 20px;
+    animation: fall 5s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    from { transform: translateY(-40px); opacity: 1; }
+    to { transform: translateY(110vh); opacity: 0; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    h1 { font-size: 2em; }
+    .big-heart {
+        width: 200px;
+        height: 180px;
+    }
+    .big-heart::before,
+    .big-heart::after {
+        width: 200px;
+        height: 180px;
+    }
+    .big-heart::before { top: -100px; }
+    .big-heart::after { left: 100px; }
+    .big-heart span { font-size: 1.2em; }
+}

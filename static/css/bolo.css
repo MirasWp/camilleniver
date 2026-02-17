@@ -1,135 +1,220 @@
-body{
-margin:0;
-background:#ffe4ef;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-height:100vh;
-font-family:Arial;
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #ffe4ef 0%, #ffb3c1 50%, #ff7fa8 100%); /* Gradiente de fundo mais dinâmico e festivo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte mais leve e divertida para aniversários */
+  overflow: hidden; /* Evita scroll desnecessário */
 }
 
-h2{margin-bottom:30px;}
-
-.container{
-display:flex;
-flex-direction:column;
-align-items:center;
+h2 {
+  margin-bottom: 30px;
+  color: #ff4d6a; /* Cor vibrante para o título */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+  font-size: 2.5em; /* Tamanho maior para impacto */
+  animation: bounce 2s infinite; /* Animação leve no título */
 }
 
-#cake{
-position:relative;
-width:200px;
-height:180px;
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
 }
 
-.layer{
-position:absolute;
-left:50%;
-transform:translateX(-50%);
-border-radius:20px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Para posicionar confetes */
 }
 
-.layer1{
-bottom:0;
-width:200px;
-height:60px;
-background:#ff7fa8;
+#cake {
+  position: relative;
+  width: 250px; /* Aumentei ligeiramente para mais presença */
+  height: 220px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2)); /* Sombra para profundidade */
 }
 
-.layer2{
-bottom:50px;
-width:180px;
-height:60px;
-background:#ff9fc0;
+.layer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra interna para textura */
 }
 
-.layer3{
-bottom:100px;
-width:160px;
-height:50px;
-background:#ffd1e0;
+.layer1 {
+  bottom: 0;
+  width: 250px;
+  height: 70px;
+  background: linear-gradient(to bottom, #ff7fa8, #e63946); /* Gradiente para mais realismo */
 }
 
-#vela{
-position:absolute;
-top:0;
-left:50%;
-transform:translateX(-50%);
-width:14px;
-height:50px;
-background:white;
-border-radius:5px;
-cursor:pointer;
+.layer2 {
+  bottom: 60px;
+  width: 220px;
+  height: 70px;
+  background: linear-gradient(to bottom, #ff9fc0, #f77f00); /* Gradiente diferenciado */
 }
 
-#fogo{
-position:absolute;
-top:-18px;
-left:50%;
-transform:translateX(-50%);
-width:18px;
-height:18px;
-background:orange;
-border-radius:50%;
-animation:flicker .5s infinite alternate;
+.layer3 {
+  bottom: 120px;
+  width: 190px;
+  height: 60px;
+  background: linear-gradient(to bottom, #ffd1e0, #ffb3c1); /* Camada superior mais clara */
 }
 
-@keyframes flicker{
-from{opacity:.6}
-to{opacity:1}
+/* Adicionei decorações no bolo para mais festa */
+.decoration {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ff4d6a;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 77, 106, 0.8); /* Brilho */
 }
 
-#msg{
-margin-top:20px;
-font-size:18px;
+.decoration:nth-child(1) { top: 10px; left: 20%; }
+.decoration:nth-child(2) { top: 20px; right: 20%; }
+.decoration:nth-child(3) { top: 30px; left: 40%; }
+.decoration:nth-child(4) { top: 40px; right: 40%; }
+
+#vela {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px; /* Ligeiramente maior */
+  height: 60px;
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0); /* Gradiente para vela */
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  transition: transform 0.3s ease; /* Transição suave ao hover */
 }
 
-#pedidoBox{
-margin-top:20px;
-display:none;
+#vela:hover {
+  transform: translateX(-50%) scale(1.05); /* Efeito de hover */
 }
 
-#pedido{
-padding:10px;
-border-radius:10px;
-border:none;
-font-size:16px;
+#fogo {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #ff4500, #ffa500); /* Gradiente para fogo mais realista */
+  border-radius: 50%;
+  animation: flicker 0.5s infinite alternate, glow 1s infinite; /* Adicionei brilho */
+  box-shadow: 0 0 10px rgba(255, 69, 0, 0.8); /* Brilho ao redor */
 }
 
-.confetti{
-position:absolute;
-width:8px;
-height:8px;
-top:0;
-animation:fall 2s linear forwards;
+@keyframes flicker {
+  from { opacity: 0.6; transform: translateX(-50%) scale(0.9); }
+  to { opacity: 1; transform: translateX(-50%) scale(1.1); }
 }
 
-@keyframes fall{
-to{
-transform:translateY(400px) rotate(360deg);
-opacity:0;
-}
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 69, 0, 0.8); }
+  50% { box-shadow: 0 0 20px rgba(255, 69, 0, 1); }
 }
 
-@media(max-width:600px){
-#cake{transform:scale(.8);}
+#msg {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.smoke{
-position:absolute;
-width:20px;
-height:20px;
-background:#ccc;
-border-radius:50%;
-top:45%;
-animation:smoke 2s forwards;
-opacity:.8;
+#pedidoBox {
+  margin-top: 20px;
+  display: none;
 }
 
-@keyframes smoke{
-to{
-transform:translateY(-80px) scale(2);
-opacity:0;
+#pedido {
+  padding: 15px 25px; /* Aumentei padding para mais espaço */
+  border-radius: 25px; /* Bordas mais arredondadas */
+  border: 3px solid #ffb3c1; /* Borda rosa mais grossa */
+  font-size: 18px; /* Fonte maior */
+  background: linear-gradient(45deg, #fff 0%, #ffeef2 100%); /* Gradiente sutil de fundo */
+  color: #333;
+  width: 300px; /* Largura fixa para consistência */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+  transition: all 0.3s ease; /* Transições suaves */
+  outline: none; /* Remove outline padrão */
+  font-family: inherit; /* Herda a fonte */
 }
+
+#pedido::placeholder {
+  color: #ff7fa8; /* Placeholder rosa */
+  font-style: italic; /* Estilo itálico */
+  opacity: 0.8;
+}
+
+#pedido:focus {
+  border-color: #ff4d6a; /* Borda mais vibrante no foco */
+  background: linear-gradient(45deg, #fff 0%, #ffd6e8 100%); /* Gradiente mais intenso */
+  box-shadow: 0 8px 20px rgba(255, 77, 106, 0.3); /* Sombra rosa no foco */
+  transform: scale(1.02); /* Leve zoom no foco */
+}
+
+#pedido:hover {
+  border-color: #ff4d6a; /* Hover na borda */
+  box-shadow: 0 8px 20px rgba(255, 77, 106, 0.2); /* Sombra rosa no hover */
+}
+
+.confetti {
+  position: absolute;
+  width: 10px; /* Ligeiramente maior */
+  height: 10px;
+  top: 0;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24); /* Cores variadas */
+  border-radius: 50%;
+  animation: fall 3s linear forwards; /* Duração aumentada */
+  z-index: 10;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(500px) rotate(720deg); /* Mais rotações */
+    opacity: 0;
+  }
+}
+
+.smoke {
+  position: absolute;
+  width: 25px; /* Ligeiramente maior */
+  height: 25px;
+  background: radial-gradient(circle, #ccc, #aaa); /* Gradiente para fumaça */
+  border-radius: 50%;
+  top: 45%;
+  animation: smoke 3s forwards; /* Duração aumentada */
+  opacity: 0.7;
+  z-index: 5;
+}
+
+@keyframes smoke {
+  to {
+    transform: translateY(-100px) scale(3);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  #cake { transform: scale(0.7); } /* Escala menor para mobile */
+  h2 { font-size: 2em; }
+  #msg { font-size: 16px; }
+  #pedido {
+    width: 250px; /* Largura menor em mobile */
+    font-size: 16px;
+    padding: 12px 20px;
+  }
 }
