@@ -10,14 +10,16 @@ function verificar() {
         envelope.style.display = "block";
 
         let pedido = localStorage.getItem("pedido");
-
-        document.getElementById("mensagem").innerHTML =
-            `Desde 28 de fevereiro minha vida mudou.<br><br>
-            Seu pedido foi guardado comigo:<br>
-            <strong>${pedido}</strong><br><br>
-            Que a gente continue criando memórias,<br>
-            superando tudo juntos<br>
-            e se escolhendo todos os dias.`;
+document.getElementById("mensagem").innerHTML =
+`Desde 28 de fevereiro minha vida mudou.<br><br>
+Seu pedido foi guardado comigo:<br>
+<strong>${pedido}</strong><br><br>
+Espero que você consiga aproveitar muito bem seu dia.<br>
+Fico feliz com os momentos bons que passamos, por mais que houvesse algumas divergências de ideias.<br>
+Agradeço profundamente por ser você a pessoa em quem eu tanto confio.<br>
+Que a gente continue criando memórias,<br>
+superando tudo juntos<br>
+e se escolhendo todos os dias.`;
     } else {
         alert("Nome errado 😅");
     }
